@@ -12,6 +12,12 @@ variable "vpc_tags" {
   default     = {}
 }
 
+variable "vpc_cidr_block" {
+  description = "CIDR block for VPC"
+  type        = string
+  default     = "10.0.0.0/16"
+}
+
 variable "use_default_vpc" {
   description = "Whether to use the default VPC - NOT recommended for production! - should more likely change this to false and use the vpc_tags to find your vpc"
   type        = bool
@@ -29,6 +35,12 @@ variable "instance_type" {
   description = "The type of instance to start"
   type        = string
   default     = "t3.micro"
+}
+
+variable "instance_count" {
+  description = "Number of instances to provision."
+  type        = number
+  default     = 1
 }
 
 variable "key_name" {
