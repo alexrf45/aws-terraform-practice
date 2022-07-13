@@ -17,4 +17,3 @@ volume_tags = {
   "Owner" = "Demo-Prod"
 }
 
-user_data = file("docker.sh")

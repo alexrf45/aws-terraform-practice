@@ -1,7 +1,7 @@
 resource "aws_security_group" "terraform-ssh" {
   name        = "terraform-ssh-sg"
   description = "Allow SSH inbound traffic"
-  vpc_id      = "${aws_vpc.main.id}"
+  vpc_id      = aws_vpc.main.id
 
   ingress {
     description = "SSH to Demo EC2 Instance"
