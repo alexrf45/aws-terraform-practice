@@ -1,6 +1,6 @@
 resource "aws_key_pair" "demo_ssh_key" {
   key_name   = var.key_name
-  public_key = file("demo-key.pub")
+  public_key = "${file("demo-key.pub")}"
 }
 
 resource "aws_instance" "terraform_ec2" {
@@ -10,7 +10,7 @@ resource "aws_instance" "terraform_ec2" {
   key_name                    = "terraform_ec2"
   vpc_security_group_ids      = data.aws_vpc.main.id
   tags = {
-    Name = "Terraform-Demo-001"
+    Name = "Terraform-Demo-EC2"
   }
 }
 
