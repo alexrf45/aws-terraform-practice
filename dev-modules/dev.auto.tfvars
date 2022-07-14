@@ -6,7 +6,7 @@ availability_zone_names = [
   "us-east-1f"
 ]
 
-network = "10.0"
+network = "10.0.2"
 
 instance_type = "t2.micro"
 
@@ -17,6 +17,6 @@ volume_tags = {
   "Owner" = "Demo-Dev"
 }
 
-prod_name = "pro-demo-subnet"
-
 dev_name = "dev-demo-subnet"
+
+ami = "ami-052efd3df9dad4825"
