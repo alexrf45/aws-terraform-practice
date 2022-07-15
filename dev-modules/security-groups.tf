@@ -6,7 +6,7 @@ module "vpc" {
 resource "aws_security_group" "terraform-ssh" {
   name        = "terraform-ssh-sg"
   description = "Allow SSH inbound traffic"
-  vpc_id      = aws_vpc.main.id
+  vpc_id      = var.aws_vpc.main.id
 
   ingress {
     description = "SSH to Dev EC2 Instances"

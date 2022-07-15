@@ -21,3 +21,29 @@ variable "key_name" {
   type = string
   default = null  
 }
+
+variable "resource_tags" {
+  description = "Tags to set for all resources"
+  type        = map(string)
+  default = {
+    project     = "test-project-001-2022-07-13",
+    environment = "dev"
+  }
+}
+
+variable "instance_type" {
+  description = "EC2 Instance type"
+  type = string
+  
+}
+
+variable "aws_security_group" {
+  type = string
+  default = ""
+  
+}
+
+variable "aws_vpc" {
+  description = "vpc ID"
+  default = ""
+}
