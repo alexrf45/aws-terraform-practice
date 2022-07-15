@@ -1,4 +1,4 @@
 output "vpc_id" {
-  description = "vpc ID"
-  value       = aws_vpc.main.id
+  description = "The ID of the VPC"
+  value       = try(aws_vpc.main.id, "")
 }

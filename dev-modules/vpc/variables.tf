@@ -14,7 +14,7 @@ variable "vpc_id" {
 variable "network" {
   description = "Network subnet"
   type        = string
-  default = ""
+  default = "10.0.2"
 }
 
 variable "resource_tags" {
