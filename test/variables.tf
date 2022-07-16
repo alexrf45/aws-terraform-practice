@@ -4,7 +4,7 @@ variable "resource_tags" {
   default = {
     project     = "test-project-001-2022-07-13",
     environment = "dev"
-    name        = "Development"
+    Name        = "Development"
   }
 }
 
@@ -32,3 +32,28 @@ variable "network" {
   type        = string
   default     = "10.0.2"
 }
+
+variable "ami" {
+  type    = string
+  default = null
+
+}
+
+variable "instance_type" {
+  description = "EC2 Instance type"
+  type        = string
+  default = "t2-micro"
+}
+
+variable "tags" {
+  description = "A mapping of tags to assign to the resource"
+  type        = map(string)
+  default     = {}
+}
+
+variable "key_name" {
+  description = "Name of the associated ec2 key pair"
+  type        = string
+  default     = "dev-demo"
+}
+
