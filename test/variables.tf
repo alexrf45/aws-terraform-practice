@@ -2,7 +2,7 @@ variable "resource_tags" {
   description = "Tags to set for all resources"
   type        = map(string)
   default = {
-    project     = "test-project-001-2022-07-13",
+    project     = "test-project",
     environment = "dev"
     Name        = "Development"
   }
