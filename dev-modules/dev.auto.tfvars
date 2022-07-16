@@ -10,13 +10,7 @@ network = "10.0.2"
 
 instance_type = "t2.micro"
 
-key_name = "demo-dev"
+key_name = "dev-demo"
 
-volume_tags = {
-  "Name"  = "Demo"
-  "Owner" = "Demo-Dev"
-}
-
-dev_name = "dev-demo-subnet"
 
 ami = "ami-052efd3df9dad4825"
