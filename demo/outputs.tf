@@ -21,3 +21,13 @@ output "private_subnets" {
   description = "List of IDs of private subnets"
   value       = aws_subnet.dev-private-subnet.id
 }
+
+output "public_ip" {
+  description = "The public IP address assigned to the instance, if applicable. NOTE: If you are using an aws_eip with your instance, you should refer to the EIP's address directly and not use `public_ip` as this field will change after the EIP is attached"
+  value       = aws_instance.terraform_ec2.public_ip
+}
+
+output "id" {
+  description = "The ID of the instance"
+  value       = aws_instance.terraform_ec2.id
+}
