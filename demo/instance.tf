@@ -1,14 +1,9 @@
-module "dev" {
-  source          = "../vpc"
-  dev_vpc_cidr    = module.dev.cidr_block
-  private_subnets = module.dev.public_subnet.id
-  public_subnets  = module.dev.private_subnet.id
-}
+
 
 resource "aws_security_group" "terraform-ssh" {
   name        = "terraform-ssh-sg"
   description = "Allow SSH inbound traffic"
-  vpc_id      = module.dev.id
+  vpc_id      = aws_vpc.dev.id
 
   ingress {
     description = var.description
@@ -40,7 +35,7 @@ resource "aws_instance" "terraform_ec2" {
   associate_public_ip_address = "true"
   key_name                    = var.key_name
   vpc_security_group_ids      = [aws_security_group.terraform-ssh.id]
-  subnet_id                   = aws_subnet.dev-public-subnet
+  subnet_id                   = aws_subnet.dev-public-subnet.id
   user_data                   = file("docker.sh")
   tags                        = var.resource_tags
 }
