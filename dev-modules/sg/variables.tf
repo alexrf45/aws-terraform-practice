@@ -4,6 +4,7 @@ variable "resource_tags" {
   default = {
     project     = "test-project-001-2022-07-13",
     environment = "dev"
+    name = "Development"
   }
 }
 

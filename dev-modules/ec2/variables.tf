@@ -5,9 +5,15 @@ variable "aws_region" {
 }
 
 variable "ami" {
-    type = string
-    default = null
-  
+  type    = string
+  default = null
+
+}
+
+variable "instance_type" {
+  description = "EC2 Instance type"
+  type        = string
+  default = "t2-micro"
 }
 
 variable "tags" {
@@ -18,8 +24,8 @@ variable "tags" {
 
 variable "key_name" {
   description = "Name of the associated ec2 key pair"
-  type = string
-  default = null  
+  type        = string
+  default     = "dev-demo"
 }
 
 variable "resource_tags" {
@@ -33,17 +39,17 @@ variable "resource_tags" {
 
 variable "instance_type" {
   description = "EC2 Instance type"
-  type = string
-  
+  type        = string
+
 }
 
 variable "aws_security_group" {
-  type = string
+  type    = string
   default = ""
-  
+
 }
 
 variable "aws_vpc" {
   description = "vpc ID"
-  default = ""
+  default     = ""
 }

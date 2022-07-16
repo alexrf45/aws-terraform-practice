@@ -20,12 +20,12 @@ output "default_security_group_id" {
 
 output "public_subnets" {
   description = "List of IDs of public subnets"
-  value       = aws_subnet.dev-subnet.id
+  value       = try(aws_subnet.dev-subnet.id, "")
 }
 
 output "public_subnet_arns" {
   description = "List of ARNs of public subnets"
-  value       = aws_subnet.dev-subnet[*].arn
+  value       = try(aws_subnet.dev-subnet.arn, "")
 }
 
 output "public_subnets_cidr_blocks" {

@@ -11,6 +11,6 @@ resource "aws_vpc" "main" {
 resource "aws_subnet" "dev-subnet" {
   vpc_id     = aws_vpc.main.id
   cidr_block = "${var.network}.0/24"
-
+  map_customer_owned_ip_on_launch = "true"
   tags = var.resource_tags
   }

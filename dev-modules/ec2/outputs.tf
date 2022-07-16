@@ -10,5 +10,5 @@ output "public_ip_addr" {
 
 output "instance_id" {
   description = "AWS ID for the EC2 instance used"
-  value       = "${aws_instance.terraform_ec2.id}"
+  value       = aws_instance.terraform_ec2.id
 }
