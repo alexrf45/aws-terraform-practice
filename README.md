@@ -12,4 +12,5 @@ To-Do
 - [x] Key-Pair
 - [ ] S3 Bucket
 - [ ] Github Actions
+    - Requires SSH secret copied onto the runner. 
 - [ ] Auto Scaling Group
