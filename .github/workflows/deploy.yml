@@ -50,7 +50,7 @@ jobs:
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         AWS_REGION: ${{ secrets.AWS_REGION }}
         AWS_PROFILE: ${{ secrets.AWS_PROFILE }}
-      run: cd demo && terraform plan -var-file="dev.auto.tfvars" -out=demo-plan -no-color
+      run: terraform plan -var-file="dev.auto.tfvars" -out=demo-plan -no-color
 
 
     # Run a terraform plan for pull requests only
