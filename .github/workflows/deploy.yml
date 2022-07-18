@@ -85,6 +85,14 @@ jobs:
           })
 
       # On push to main, build or change infrastructure according to Terraform configuration files
+    - name: Change Directory
+      if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+      run: cd demo
+    
+    - name: Copy SSH Key to directory
+      if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+      run: echo $SSH_PUBLIC_KEY > demo-key.pub
+    
     - name: Terraform Apply
       if: github.ref == 'refs/heads/main' && github.event_name == 'push'
       env:
@@ -93,6 +101,6 @@ jobs:
         AWS_REGION: ${{ secrets.AWS_REGION }}
         AWS_PROFILE: ${{ secrets.AWS_PROFILE }}
         SSH_PUBLIC_KEY: ${{ secrets.SSH_PUBLIC_KEY }}
-      run: cd demo && cat $SSH_PUBLIC_KEY > demo-key.pub && terraform apply -var-file="../dev.auto.tfvars" -auto-approve
+      run: terraform apply -var-file="../dev.auto.tfvars" -auto-approve
 
  
