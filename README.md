@@ -1,5 +1,8 @@
 # aws-terraform-practice
 
+
+[![Terraform-demo](https://github.com/alexrf45/aws-terraform-practice/actions/workflows/deploy.yml/badge.svg?branch=main)](https://github.com/alexrf45/aws-terraform-practice/actions/workflows/deploy.yml)
+
 This is a repo for practicing building AWS resources using Terraform. 
 
 To-Do
