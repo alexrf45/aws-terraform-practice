@@ -24,7 +24,7 @@ jobs:
     # Checkout the repository to the GitHub Actions runner
     - name: Checkout
       uses: actions/checkout@v2
-      run: cd demo
+
 
     # Install the preferred version of Terraform CLI 
     - name: Setup Terraform
@@ -40,6 +40,7 @@ jobs:
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         AWS_REGION: ${{ secrets.AWS_REGION }}
         AWS_PROFILE: ${{ secrets.AWS_PROFILE }}
+      run: cd demo
       run: terraform init
 
 
