@@ -1,10 +1,10 @@
-aws_region = "us-east-1"
+# aws_region = "us-east-1"
 
-availability_zone_names = [
-  "us-east-1d",
-  "us-east-1e",
-  "us-east-1f"
-]
+# availability_zone_names = [
+#   "us-east-1d",
+#   "us-east-1e",
+#   "us-east-1f"
+# ]
 
 instance_type = "t2.micro"
 
