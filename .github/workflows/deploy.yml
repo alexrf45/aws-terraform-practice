@@ -111,6 +111,6 @@ jobs:
         AWS_REGION: ${{ secrets.AWS_REGION }}
         AWS_PROFILE: ${{ secrets.AWS_PROFILE }}
         SSH_PUBLIC_KEY: ${{ secrets.SSH_PUBLIC_KEY }}
-      run: terraform apply "demo-plan" -auto-approve
+      run: terraform apply "demo-plan"
 
  
