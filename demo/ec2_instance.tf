@@ -10,6 +10,11 @@ resource "aws_instance" "terraform_ec2" {
   key_name                    = var.key_name
   vpc_security_group_ids      = [aws_security_group.terraform-ssh.id]
   subnet_id                   = aws_subnet.dev-public-subnet.id
+  root_block_device {
+    volume_size = var.root_volume_size
+    volume_type = "gp2"
+    encrypted   = true
+     }
   user_data                   = file("docker.sh")
   tags                        = var.resource_tags
 }

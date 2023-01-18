@@ -30,6 +30,12 @@ variable "instance_type" {
   default     = "t2-micro"
 }
 
+variable "root_volume_size" {
+  description = "root volume size of ec2 instance"
+  type        = string
+  default     = "30"
+}
+
 variable "key_name" {
   description = "Name of the associated ec2 key pair"
   type        = string
