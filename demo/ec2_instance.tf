@@ -16,7 +16,8 @@ resource "aws_instance" "terraform_ec2" {
     encrypted   = true
      }
   metadata_options {
-    http_tokens = required
+	  http_endpoint = "enabled"
+    http_tokens = "required"
     }
   user_data                   = file("docker.sh")
   tags                        = var.resource_tags

@@ -31,3 +31,13 @@ output "id" {
   description = "The ID of the instance"
   value       = aws_instance.terraform_ec2.id
 }
+
+output "repo-url" {
+  description = "The url of the repo"
+	value = aws_ecr_repository.web-image-repo.repository_url
+}
+
+output "repo-id" {
+  description = "The id of the repo"
+	value       = aws_ecr_repository.web-image-repo.registry_id
+}
