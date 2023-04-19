@@ -1,6 +1,6 @@
 resource "aws_key_pair" "demo_ssh_key" {
   key_name   = var.key_name
-  public_key = file("~/.ssh/demo-key.pub")
+  public_key = file("/infra/homeadm.pub")
 }
 
 resource "aws_instance" "terraform_ec2" {

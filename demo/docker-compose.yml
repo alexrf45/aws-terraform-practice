@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  terraform:
+    image: hashicorp/terraform:latest
+    volumes:
+      - .:/infra
+      - ./infastructure:/infra
+      - type: bind
+        source: ~/.ssh/homeadm.pub
+        target: /infra/homeadm.pub
+        read_only: true
+    working_dir: /infra
+    environment:
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+      - AWS_SESSION_TOKEN=${AWS_SESSION_TOKEN}
